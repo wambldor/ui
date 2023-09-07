@@ -116,7 +116,7 @@ end
 M.closeOtherBufs = function()
   for _, buf in ipairs(vim.t.bufs) do
     if buf ~= api.nvim_get_current_buf() then
-      vim.api.nvim_buf_delete(buf, {})
+      M.close_buffer(buf)
     end
   end
 
